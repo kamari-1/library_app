@@ -27,13 +27,18 @@ body {
       -ms-flex-align: end;
           align-items: flex-end;
   width: 100%;
-  margin-bottom: 1rem;
-  font-size: 2.6rem;
+  margin-bottom: 0.5rem;
+  padding-bottom: 0;
 }
 
 .side-left .logo-img {
   width: 4rem;
   height: 4rem;
+}
+
+.side-left .logo h1 {
+  padding-bottom: 0;
+  font-size: 2rem;
 }
 
 .side-left form {
@@ -47,54 +52,6 @@ body {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: start;
-  padding-top: 1rem;
-}
-
-.side-left form label {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  padding-bottom: 0.7rem;
-  font-size: 1rem;
-}
-
-.side-left form label input[type="text"],
-.side-left form label input[type="number"] {
-  width: 100%;
-  padding: 0.3rem;
-  font-size: 0.9rem;
-}
-
-.side-left form .label-read {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.side-left form .label-read input {
-  margin-right: 0.5rem;
-  width: 1.5rem;
-  height: 1.5rem;
-}
-
-.side-left form button {
-  width: 80px;
-  height: 40px;
-  background-color: blue;
-  color: white;
-  outline: 0;
-  border: 0;
 }
 
 .side-left .library-stats {
@@ -147,6 +104,7 @@ main .library-empty {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  vertical-align: middle;
   width: 85%;
   height: 50vh;
   margin: auto;
@@ -155,53 +113,26 @@ main .library-empty {
   color: grey;
 }
 
-.table {
-  display: block;
-  width: 85%;
-  margin: 0 auto;
-  overflow-y: scroll;
-}
-
-.table table {
+.table-div {
   width: 100%;
-  font-size: 1.2rem;
-  border-collapse: collapse;
 }
 
-.table table td,
-.table table th {
-  border: 1px solid #b3b3b3;
-}
-
-.table table th {
-  background-color: black;
-  color: white;
-  text-align: left;
-  padding: 0.5rem 1rem;
-}
-
-.table table tbody tr:nth-child(even) {
-  background-color: #f2f2f2;
-}
-
-.table table td {
-  padding: 0.2rem 0;
-  padding-left: 1rem;
-  font-size: 1rem;
-  text-transform: capitalize;
-}
-
-.table table .td-author {
-  color: blue;
+.table-div .table .td-author {
   font-style: italic;
 }
 
-.table table .trash {
+.table-div .table .trash {
   color: firebrick;
+  cursor: pointer;
 }
 
-.table table .fa-check {
+.table-div .table .fa-check {
   color: green;
+  cursor: pointer;
+}
+
+.table-div .table .fa-times {
+  cursor: pointer;
 }
 
 *,

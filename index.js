@@ -11,7 +11,7 @@ let emptyLibrary = document.querySelector(".library-empty");
 // let btn = document.getElementById("btn");
 let clearAllBtn = document.querySelector(".btn-clear-all");
 let booklist = document.getElementById("booklist");
-let table = document.querySelector("table");
+let table = document.querySelector(".table-div");
 // let trash = document.getElementsByClassName("trash");
 let totalBooks = document.getElementById("total-books");
 let booksRead = document.getElementById("books-read");
@@ -53,8 +53,8 @@ function showBooks() {
   library.forEach((book) => {
     const row = document.createElement("tr");
     row.innerHTML = `
-        <td>${book.title}</td>
-        <td class="td-author">${book.author}</td>
+        <td class="td-title">${book.title}</td>
+        <td class="td-author text-muted">${book.author}</td>
         <td>${book.pages}</td>
         <td>${
           book.read
@@ -84,7 +84,6 @@ function showBooks() {
 form.addEventListener("submit", (e) => {
   e.preventDefault();
   validate();
-  // addToLibrary(title.value, author.value, pages.value, read.checked);
 });
 
 // ----- Remove book -----
@@ -130,9 +129,11 @@ booklist.addEventListener("click", toggleRead);
 
 // clear all books
 clearAllBtn.addEventListener("click", () => {
-  library = [];
-  updateLocalStorage();
-  showBooks();
+  if (confirm("Are you sure?")) {
+    library = [];
+    updateLocalStorage();
+    showBooks();
+  } else return;
 });
 
 // -------------------------
