@@ -20,6 +20,8 @@ let booksUnread = document.getElementById("books-unread");
 // Get Library from LOCALSTORAGE
 if (localStorage.getItem("books") == null) {
   library = [];
+  emptyLibrary.style.display = "flex";
+  table.style.display = "none";
 } else {
   const booksFromLocalStorage = JSON.parse(localStorage.getItem("books"));
   library = booksFromLocalStorage;
